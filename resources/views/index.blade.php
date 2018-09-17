@@ -6,11 +6,11 @@
     <body>
         <center>
         @if(session('status'))
-        {{session('status')}}
+        <div style="color:green;">{{session('status')}}</div>
         @endif
         @if($errors->all())
         @foreach($errors->all() as $error)
-        {{error}}
+        <div style="color:red;">{{error}}</div>
         @endforeach
         @endif
         <form method="post">
