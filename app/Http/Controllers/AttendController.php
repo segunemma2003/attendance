@@ -14,7 +14,7 @@ class AttendController extends Controller
      */
     public function index()
     {
-        return view('attendance')
+        return view('attendance');
     }
 
     /**
@@ -45,8 +45,9 @@ class AttendController extends Controller
         $attend=NEW Attend;
         $attend->time=date("h:i:s");
         $attend->date=date("d-m-y");
+        $attend->fellow()->associate($fellow);
         if($attend->save()){
-            return redirect()->back()->with('status',$fellow->name);
+            return redirect()->back()->with('status',$fellow->name."marked present at ". $attend->time);
         }
         return redirect()->back()->with('status',"No record");
     }

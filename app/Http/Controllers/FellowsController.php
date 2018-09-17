@@ -38,7 +38,7 @@ class FellowsController extends Controller
         $this->validate($request,[
             "name"=>"required",
             "phone"=>"required",
-            "email"=>"required|unique",
+            "email"=>"required|unique:fellows",
             "gender"=>"required",
             "qualification"=>"required",
             "choice"=>"required"
@@ -51,7 +51,7 @@ class FellowsController extends Controller
         $fellow->qualification=$request->qualification;
         $fellow->choice=$request->choice;
         if($fellow->save()){
-            return redirect()->back()->with('status',"You have Successfully Registered. Your user id is ${$fellow->id}");
+            return redirect()->back()->with('status',"You have Successfully Registered. Your user id is". $fellow->id);
         }
         return redirect()->back()->with('status','error while saving your data');
     }

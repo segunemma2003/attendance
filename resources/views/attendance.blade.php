@@ -7,8 +7,8 @@
         <center>
         <h1>Attendance sheet</h1>
         <div>
-           @if(session('status'))
-        {{$status}}
+          @if(session('status'))
+        {{session('status')}}
         @endif
         @if($errors->all())
         @foreach($errors->all() as $error)
@@ -17,8 +17,9 @@
         @endif
         </div>
         <form method="post">
-            <label>Name:</label>
-            <input type="text" placeholder="Enter your Name" name="name"/><br />
+
+            @csrf
+            <label>Input Identification number:</label>
             <input type="number" placeholder="Enter your identification number" name="id"/><br />
             <input type="submit">
         </form>

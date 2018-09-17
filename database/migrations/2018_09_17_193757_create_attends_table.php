@@ -15,8 +15,8 @@ class CreateAttendsTable extends Migration
     {
         Schema::create('attends', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('fellows')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('fellow_id')->unsigned();
+            $table->foreign('fellow_id')->references('id')->on('fellows')->onDelete('cascade')->onUpdate('cascade');
             $table->time('time');
             $table->date('date');
             $table->timestamps();
