@@ -1,0 +1,103 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Fellows;
+use Illuminate\Http\Request;
+
+class FellowsController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('index');
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        $this->validate($request,[
+            "name"=>"required",
+            "phone"=>"required",
+            "email"=>"required|unique",
+            "gender"=>"required",
+            "qualification"=>"required",
+            "choice"=>"required"
+        ]);
+        $fellow=new Fellows;
+        $fellow->name=$request->name;
+        $fellow->phone=$request->phone;
+        $fellow->email=$request->email;
+        $fellow->gender=$request->gender;
+        $fellow->qualification=$request->qualification;
+        $fellow->choice=$request->choice;
+        if($fellow->save()){
+            return redirect()->back()->with('status',"You have Successfully Registered. Your user id is ${$fellow->id}");
+        }
+        return redirect()->back()->with('status','error while saving your data');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \App\Fellows  $fellows
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Fellows $fellows)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \App\Fellows  $fellows
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Fellows $fellows)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Fellows  $fellows
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Fellows $fellows)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Fellows  $fellows
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Fellows $fellows)
+    {
+        //
+    }
+}
