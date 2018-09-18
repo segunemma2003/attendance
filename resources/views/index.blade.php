@@ -2,32 +2,56 @@
 <html>
     <head>
         <title>IGHub Registration</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     </head>
-    <body>
-        <center>
+    <body style="background-color:#27AE60;padding:5%;">
+      
         @if(session('status'))
-        <div style="color:green;">{{session('status')}}</div>
+        <div style="color:green;">
+
+        {{session('status')}}
+        </div>
         @endif
         @if($errors->all())
         @foreach($errors->all() as $error)
-        <div style="color:red;">{{error}}</div>
+        <div style="color:red;">
+        {{error}}
+        </div>
         @endforeach
         @endif
+        <h1 class="text-center">IGHUB Developer/Netpreneurship Fellowship 2018</h1>
+        <h4 class="text-center">Students Attendance Details</h4>
+        <div style="height:100%;width:40%;margin-left:30%;padding:5%;margin-bottom:30px;">
         <form method="post">
             @csrf
-            <label>Name:</label>
-            <input type="text" placeholder="Enter your Name" name="name"/><br />
-            <label>Phone number:</label>
-            <input type="text" placeholder="Enter your Phone" name="phone"/><br />
-            <label>Email:</label>
-            <input type="email" placeholder="Email Address" name="email" /><br />
-            <label>Gender:</label>
-            <label>Male</label><input type="radio" name="gender"/>
-            <label>Female</label><input type="radio" name="gender" />
-            <label>Qualification:</label>
-            <input type="text" placeholder="Qualification" name="qualification" />
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" placeholder="Enter your Name" class="form-control" name="name"/><br />
+                </div>
+                    <div class="form-group">
+                        <label>Phone number:</label>
+                        <input type="text" placeholder="Enter your Phone" class="form-control" name="phone"/><br />
+                    </div>
+                        <div class="form-group">
+                            <label>Email:</label>
+                            <input type="email" placeholder="Email Address" class="form-control" name="email" /><br />
+                        </div>
+                            <div class="form-group form-check form-check-inline">
+                                <label class="form-check-label">Gender: &nbsp &nbsp </label>
+
+                                <label class="form-check-label">Male</label>
+                                <input class="form-check-input"type="radio" name="gender"/> &nbsp &nbsp &nbsp
+                                <label class="form-check-label">Female</label><input class="form-check-input" type="radio" name="gender" /><br />
+                            </div>
+                           
+                                <div class="form-group">
+                                    <label>Qualification:</label>
+                                    <input  class="form-control"type="text" placeholder="Qualification" name="qualification" />
+                                    <br />
+                                </div>
+            <div class="form-group">
             <label>Your choice:</label>
-            <select name="choice">
+            <select class="form-control"name="choice">
                 <option name="Ecommerce Marketing">Ecommerce Marketing</option>
                 <option name="Info Marketing">Info Marketing</option>
                 <option name="Digital Marketing">Digital Marketing</option>
@@ -39,8 +63,10 @@
                 <option name="Mobile Development">Mobile Development</option>
                 <option name="Graphics Design">Graphics Design</option>
             </select>
-            <input type="submit">
+            </div>
+            <input class="btn btn-secondary" style="background-color:black;" type="submit">
         </form>
-    </center>
+        </div>
+   
     </body>
 </html>
