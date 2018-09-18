@@ -65,6 +65,10 @@ class AttendController extends Controller
         // dd($q);
         return view('sheet',compact('attendance'));
     }
+    public function allfellows(){
+        $attendance=Fellows::paginate(20);
+        return view('allfellows',compact('attendance'));
+    }
 
     /**
      * Display the specified resource.
