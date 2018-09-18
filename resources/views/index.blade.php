@@ -39,8 +39,8 @@
                                 <label class="form-check-label">Gender: &nbsp &nbsp </label>
 
                                 <label class="form-check-label">Male</label>
-                                <input class="form-check-input"type="radio" name="gender"/> &nbsp &nbsp &nbsp
-                                <label class="form-check-label">Female</label><input class="form-check-input" type="radio" name="gender" /><br />
+                                <input class="form-check-input"type="radio" name="gender" value="Male"/> &nbsp &nbsp &nbsp
+                                <label class="form-check-label">Female</label><input class="form-check-input" type="radio" name="gender" value="female"/><br />
                             </div>
                            
                                 <div class="form-group">
