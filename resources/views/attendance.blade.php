@@ -8,11 +8,11 @@
         <h1>Attendance sheet</h1>
         <div>
          @if(session('status'))
-        <div style="color:green;">{{session('status')}}</div>
+        <div style="color:green;"><h4>{{session('status')}}</h4></div>
         @endif
         @if($errors->all())
         @foreach($errors->all() as $error)
-        <div style="color:red;">{{error}}</div>
+        <div style="color:red;"><h4>{{error}}</h4></div>
         @endforeach
         @endif
         </div>

@@ -51,6 +51,20 @@ class AttendController extends Controller
         }
         return redirect()->back()->with('status',"No record");
     }
+    public function sheet()
+    {
+        $q=\Request::get('q');
+
+        if($q==null){
+            $q=date("d-m-y");
+        }else{
+            $q=$q;
+        }
+        // dd($q);
+        $attendance=Attend::where('date',$q)->get();
+        // dd($q);
+        return view('sheet',compact('attendance'));
+    }
 
     /**
      * Display the specified resource.

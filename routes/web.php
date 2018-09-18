@@ -15,4 +15,4 @@ Route::get('/','FellowsController@index');
 Route::post('/','FellowsController@store');
 Route::get('/attendance','AttendController@index');
 Route::post('/attendance','AttendController@store');
-
+Route::get('/sheet','AttendController@sheet');
