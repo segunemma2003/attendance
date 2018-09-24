@@ -69,6 +69,17 @@ class AttendController extends Controller
         $attendance=Fellows::paginate(20);
         return view('allfellows',compact('attendance'));
     }
+    public function signout($id)
+    {
+        $attend=Attend::whereId($id)->first();
+        $attend->timeout=date("h:i:s");
+        $attend->dateout=date("d-m-y");
+        if($attend->save()){
+           return redirect()->back()->with('status',$attend->fellow->name." signed out  at ". $attend->timeout);
+        }
+        return redirect()->back()->with('status',"No record"); 
+
+    }
 
     /**
      * Display the specified resource.
@@ -87,9 +98,10 @@ class AttendController extends Controller
      * @param  \App\Attend  $attend
      * @return \Illuminate\Http\Response
      */
-    public function edit(Attend $attend)
+    public function edit($id)
     {
-        //
+        $fellow=Fellows::whereId($id)->first();
+        return view('edit',compact('fellow'));
     }
 
     /**
@@ -99,9 +111,27 @@ class AttendController extends Controller
      * @param  \App\Attend  $attend
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Attend $attend)
+    public function update(Request $request, $id)
     {
-        //
+        // $this->validate($request,[
+        //     "name"=>"required",
+        //     "phone"=>"required",
+        //     "email"=>"required|unique:fellows",
+        //     "gender"=>"required",
+        //     "qualification"=>"required",
+        //     "choice"=>"required"
+        // ]);
+        $fellow=Fellows::whereId($id)->first();
+        $fellow->name=$request->name;
+        $fellow->phone=$request->phone;
+        $fellow->email=$request->email;
+        // $fellow->gender=$request->gender;
+        $fellow->qualification=$request->qualification;
+        // $fellow->choice=$request->choice;
+        if($fellow->save()){
+            return redirect('/allfellows')->with('status',"You have updated your profile successfully");
+        }
+        return redirect('/allfellows')->with('status','error while saving your data');
     }
 
     /**

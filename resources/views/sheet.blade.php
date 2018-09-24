@@ -38,6 +38,7 @@
                     <th>Choice</th>
                     <th>Id</th>
                     <th>Time</th>
+                    <th>Signout</th>
                 </tr>
                 @foreach($attendance as $attenda)
 
@@ -50,6 +51,13 @@
                     <td>{{$attenda->fellow->choice}}</td>
                     <td>{{$attenda->fellow->id}}</td>
                     <td>{{$attenda->time}}</td>
+                    <td>
+                        @if($attenda->timeout=="")
+                        <a href="{{route('signout',$attenda->fellow->id)}}">Signout</a>
+                        @else
+                        {{$attenda->timeout}}
+                        @endif
+                    </td>
                 </tr>
                 @endforeach
             </table>

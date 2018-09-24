@@ -17,3 +17,6 @@ Route::get('/attendance','AttendController@index');
 Route::post('/attendance','AttendController@store');
 Route::get('/sheet','AttendController@sheet');
 Route::get('/allfellows','AttendController@allfellows');
+Route::get('/signout/{id}','AttendController@signout')->name('signout');
+Route::get('/fellow/{id}','AttendController@edit')->name('fellow.edit');
+Route::post('/fellow/{id}','AttendController@update');
