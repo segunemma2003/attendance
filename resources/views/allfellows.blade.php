@@ -5,9 +5,11 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     </head>
     <body>
+
         <center>
         <h1>All Fellows</h1>
-        <h3>Total number of registered fellows are {{$attendance->count()}}</h3>
+        <h3>Total number of registered fellows are {{$attendances->count()}}</h3>
+         @include('navbar')
         <div>
             @if($attendance->isEmpty())
             <div>You have no student present yet</div>

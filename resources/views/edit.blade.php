@@ -6,7 +6,7 @@
     </head>
     <body style="background-color:#27AE60;padding:5%;">
       
-        
+        @include('navbar')
         <h1 class="text-center">IGHUB Developer/Netpreneurship Fellowship 2018</h1>
         <h4 class="text-center">Students Attendance Details</h4>
         <div style="height:100%;width:40%;margin-left:30%;padding:5%;margin-bottom:30px;">

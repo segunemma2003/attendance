@@ -4,8 +4,10 @@
         <title>IGHub Registration</title>
     </head>
     <body>
+
         <center>
         <h1>Attendance sheet</h1>
+        @include('navbar')
         <div>
          @if(session('status'))
         <div style="color:green;">{{session('status')}}</div>
@@ -16,14 +18,14 @@
         @endforeach
         @endif
         </div>
-        <form method="get">
+       <!--  <form method="get">
 
             @csrf
             <label>Search by date:</label>
             <small>search in this format <quote>dd-mm-yyyy</quote></small>
             <input type="text" placeholder="Search" name="q"/><br />
             <input type="submit">
-        </form>
+        </form> -->
         <div>
             @if($attendance->isEmpty())
             <div>You have no student present yet</div>

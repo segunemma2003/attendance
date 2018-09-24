@@ -8,10 +8,13 @@
       
         
         <h1 class="text-center">IGHUB Developer/Netpreneurship Fellowship 2018</h1>
+
         <h4 class="text-center">Students Attendance Details</h4>
+         @include('navbar')
         <div style="height:100%;width:40%;margin-left:30%;padding:5%;margin-bottom:30px;">
             @if(session('status'))
             <center>
+               
         <div style="color:green;"><h4>{{session('status')}}</h4></div>
         @endif
         @if($errors->all())

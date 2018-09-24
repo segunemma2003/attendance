@@ -5,8 +5,10 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     </head>
     <body style="padding:10%;background-color:#27AE60;">
+
         <!-- <center> -->
         <h1 class="text-center">IGHUB Developers/Netpreneurship Fellowship 2018</h1>
+        @include('navbar')
         <h3 class="text-center">Attendance sheet</h3>
         <div>
             <center>

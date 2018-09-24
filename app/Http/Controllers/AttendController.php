@@ -67,7 +67,8 @@ class AttendController extends Controller
     }
     public function allfellows(){
         $attendance=Fellows::paginate(20);
-        return view('allfellows',compact('attendance'));
+        $attendances=Fellows::all();
+        return view('allfellows',compact('attendance','attendances'));
     }
     public function signout($id)
     {
