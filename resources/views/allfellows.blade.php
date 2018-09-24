@@ -8,6 +8,7 @@
 
         <center>
         <h1>All Fellows</h1>
+        <center><marquee><h3>Welcome to IGHUB Fellowship programme 2018</h3></marquee></center> 
         <h3>Total number of registered fellows are {{$attendances->count()}}</h3>
          @include('navbar')
         <div>
