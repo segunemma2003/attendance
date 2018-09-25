@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>IGHub Registration</title>
@@ -41,6 +41,7 @@
                     <th>Id</th>
                     <th>Time</th>
                     <th>Signout</th>
+                    <th>Delete</th>
                 </tr>
                 @foreach($attendance as $attenda)
 
@@ -60,6 +61,7 @@
                         {{$attenda->timeout}}
                         @endif
                     </td>
+                    <td><a href="{{route('fellow.destroy',$attenda->fellow->id}}">Delete</a></td>
                 </tr>
                 @endforeach
             </table>

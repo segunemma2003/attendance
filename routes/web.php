@@ -19,4 +19,5 @@ Route::get('/sheet','AttendController@sheet');
 Route::get('/allfellows','AttendController@allfellows');
 Route::get('/signout/{id}','AttendController@signout')->name('signout');
 Route::get('/fellow/{id}','AttendController@edit')->name('fellow.edit');
+Route::get('/fellow/{id}','AttendController@destroy')->name('fellow.destroy');
 Route::post('/fellow/{id}','AttendController@update');

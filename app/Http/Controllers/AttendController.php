@@ -82,6 +82,7 @@ class AttendController extends Controller
 
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -141,8 +142,12 @@ class AttendController extends Controller
      * @param  \App\Attend  $attend
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Attend $attend)
+    public function destroy($id)
     {
-        //
+        $attenda=Attend::whereId($id)->first();
+        if($attenda->delete()){
+            return redirect()->back()->with('status',"You have updated your profile successfully");
+        }
+        return redirect()->back()->with('status',"Opps an error occurred!!!");
     }
 }
