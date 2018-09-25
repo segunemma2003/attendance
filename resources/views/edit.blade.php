@@ -25,7 +25,7 @@
             @csrf
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" placeholder="Enter your Name" class="form-control" name="name" value="{{$fellow->name}}" readonly /><br />
+                    <input type="text" placeholder="Enter your Name" class="form-control" name="name" value="{{$fellow->name}}"/><br />
                 </div>
                     <div class="form-group">
                         <label>Phone number:</label>
