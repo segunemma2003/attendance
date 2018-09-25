@@ -61,7 +61,7 @@
                         {{$attenda->timeout}}
                         @endif
                     </td>
-                    <td><a href="{{route('fellow.destroy',$attenda->fellow->id}}">Delete</a></td>
+                    <td><a style="padding:12px;" href="{{route('fellow.destroy',$attenda->fellow->id}}">Delete</a></td>
                 </tr>
                 @endforeach
             </table>
