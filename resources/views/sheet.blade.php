@@ -56,12 +56,12 @@
                     <td>{{$attenda->time}}</td>
                     <td>
                         @if($attenda->timeout=="")
-                        <a href="{{route('signout',$attenda->fellow->id)}}">Signout</a>
+                        <a href="{{route('signout',$attenda->id)}}">Signout</a>
                         @else
                         {{$attenda->timeout}}
                         @endif
                     </td>
-                    <td><a style="padding:12px;" href="{{route('fellow.destroy',$attenda->fellow->id}}">Delete</a></td>
+                    <td><a style="padding:12px;" href="{{route('fellow.destroy',$attenda->id)}}">Delete</a></td>
                 </tr>
                 @endforeach
             </table>

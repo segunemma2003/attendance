@@ -42,7 +42,7 @@ class AttendController extends Controller
         if(!$fellow){
             return redirect()->back()->with('status','You have no account with us');
         }
-        $attend=NEW Attend;
+        $attend=new Attend;
         $attend->time=date("h:i:s");
         $attend->date=date("d-m-y");
         $attend->fellow()->associate($fellow);
@@ -145,6 +145,7 @@ class AttendController extends Controller
     public function destroy($id)
     {
         $attenda=Attend::whereId($id)->first();
+        // dd($attenda);
         if($attenda->delete()){
             return redirect()->back()->with('status',"You have updated your profile successfully");
         }
