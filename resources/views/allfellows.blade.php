@@ -31,7 +31,7 @@
                 <tr>
                     <td>{{$loop->index+1}}</td>
                     
-                    <td><a href="{{route('fellow.edit',$attenda->id)}}">{{$attenda->name}}</a></td>
+                    <td><a href="{{route('fellows.edit',$attenda->id)}}">{{$attenda->name}}</a></td>
                     <td>{{$attenda->email}}</td>
                     <td>{{$attenda->gender}}</td>
                     <td>{{$attenda->choice}}</td>

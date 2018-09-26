@@ -18,14 +18,14 @@
         @endforeach
         @endif
         </div>
-       <!--  <form method="get">
+        <form method="get">
 
             @csrf
             <label>Search by date:</label>
             <small>search in this format <quote>dd-mm-yyyy</quote></small>
-            <input type="text" placeholder="Search" name="q"/><br />
-            <input type="submit">
-        </form> -->
+            <input type="text" placeholder="Search" name="q"/><span>
+            <input type="submit"></span>
+        </form>
         <div>
             @if($attendance->isEmpty())
             <div>You have no student present yet</div>

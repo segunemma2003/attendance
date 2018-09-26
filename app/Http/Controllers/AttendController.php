@@ -44,7 +44,8 @@ class AttendController extends Controller
         }
         $attend=new Attend;
         $attend->time=date("h:i:s");
-        $attend->date=date("d-m-y");
+        $attend->date=date("y-m-d");
+        // dd(date("y-m-d"));
         $attend->fellow()->associate($fellow);
         if($attend->save()){
             return redirect()->back()->with('status',$fellow->name."marked present at ". $attend->time);
@@ -62,8 +63,9 @@ class AttendController extends Controller
         }
         // dd($q);
         $attendance=Attend::where('date',$q)->get();
+        $absentees=Fellows::all();
         // dd($q);
-        return view('sheet',compact('attendance'));
+        return view('sheet',compact('attendance','fellows'));
     }
     public function allfellows(){
         $attendance=Fellows::paginate(20);
