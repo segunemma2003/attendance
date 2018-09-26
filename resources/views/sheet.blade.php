@@ -6,7 +6,8 @@
     <body>
 
         <center>
-        <h1>Attendance sheet</h1>
+        <h1>Attendance sheet for  {{date('D')}} {{date('M')}} {{date('Y')}}</h1>
+        <h3>Total number of fellows is/are {{$attendance->count()}}</h3> 
         @include('navbar')
         <div>
          @if(session('status'))

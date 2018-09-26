@@ -57,7 +57,7 @@ class AttendController extends Controller
         $q=\Request::get('q');
 
         if($q==null){
-            $q=date("d-m-y");
+            $q=date("y-m-d");
         }else{
             $q=$q;
         }
