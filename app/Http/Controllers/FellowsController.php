@@ -51,7 +51,7 @@ class FellowsController extends Controller
            
         ]);
         
-          $filename = $request->file('pics')->getClientOriginalName();
+        $filename = $request->file('pics')->getClientOriginalName();
 
         $file=pathinfo($filename,PATHINFO_FILENAME);
 

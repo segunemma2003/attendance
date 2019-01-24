@@ -68,14 +68,14 @@ class AttendController extends Controller
         return view('sheet',compact('attendance','fellows'));
     }
     public function allfellows(){
-        $attendance=Fellows::paginate(20);
-        $netpren=Fellows::WhereChoice('Netpreneur');
-        $graphics=Fellows::WhereChoice('Graphics Design');
-        $front=Fellows::WhereChoice('Frontend Development');
-        $back=Fellows::WhereChoice('Backend Development');
-        $mobile=Fellows::WhereChoice('Mobile Development');
+       // $attendance=Fellows::paginate(20);
+        $netpren=Fellows::whereChoice('Digital Marketing')->get();
+        $graphics=Fellows::whereChoice('Graphics Design')->get();
+        $front=Fellows::whereChoice('Frontend Development')->get();
+        $back=Fellows::whereChoice('Backend Development')->get();
+        $mobile=Fellows::whereChoice('Mobile Development')->get();
 
-        return view('allfellows',compact('attendance','netpren',
+        return view('allfellows',compact('netpren',
                         'graphics', 'front', 'back', 'mobile'));
     }
     public function signout($id)
