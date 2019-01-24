@@ -19,6 +19,11 @@ class CreateFellowsTable extends Migration
             $table->string('phone');
             $table->string('email')->unique();
             $table->string('gender');
+            $table->string('dob');
+            $table->string('soo');
+            $table->string('lga');
+            $table->string('address');
+            $table->string('pics');
             $table->string('qualification')->nullable();
             $table->string('choice');
             $table->timestamps();

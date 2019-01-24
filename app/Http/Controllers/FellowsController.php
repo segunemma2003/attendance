@@ -41,8 +41,29 @@ class FellowsController extends Controller
             "email"=>"required|unique:fellows",
             "gender"=>"required",
             "qualification"=>"required",
-            "choice"=>"required"
+            "choice"=>"required",
+             "dob"=>"required",
+             "soo"=>"required",
+             "lga"=>"required",
+             "address"=>"required",
+             "pics"=>"required"
+            
+           
         ]);
+        
+          $filename = $request->file('pics')->getClientOriginalName();
+
+        $file=pathinfo($filename,PATHINFO_FILENAME);
+
+        $ext =$request->file('pics')->getClientOriginalExtension();
+
+        $tostore=$file . "_" . time() . "." . $ext;
+
+        $path =$request->file('pics')->storeAs('public/upload', $tostore);
+
+
+        
+        
         $fellow=new Fellows;
         $fellow->name=$request->name;
         $fellow->phone=$request->phone;
@@ -50,6 +71,12 @@ class FellowsController extends Controller
         $fellow->gender=$request->gender;
         $fellow->qualification=$request->qualification;
         $fellow->choice=$request->choice;
+        $fellow->dob=$request->dob;
+        $fellow->soo=$request->soo;
+        $fellow->lga=$request->lga;
+        $fellow->address=$request->address;
+        $fellow->pics=$tostore;
+        
         if($fellow->save()){
             return redirect()->back()->with('status',"You have Successfully Registered. Your user id is ". $fellow->id);
         }

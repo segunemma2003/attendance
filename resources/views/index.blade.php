@@ -24,7 +24,7 @@
         @endforeach
         @endif
     </center>
-        <form method="post">
+        <form method="post" enctype="multipart/form-data”  >
             @csrf
                 <div class="form-group">
                     <label>Name:</label>
@@ -51,20 +51,42 @@
                                     <input  class="form-control"type="text" placeholder="Qualification" name="qualification" />
                                     <br />
                                 </div>
+                                <div class="form-group">
+                                    <label>Date of Birth :</label>
+                                    <input  class="form-control"type="text" placeholder="Date of Birth" name="dob" />
+                                    <br />
+                                </div>
+                                 <div class="form-group">
+                                    <label>State of Origin:</label>
+                                    <input  class="form-control"type="text" placeholder="State of Origin" name="soo" />
+                                    <br />
+                                </div>
+                                <div class="form-group">
+                                    <label>Local Government Area:</label>
+                                    <input  class="form-control"type="text" placeholder="Local Government Area" name="lga" />
+                                    <br />
+                                </div>
+                                <div class="form-group">
+                                    <label>Home address:</label>
+                                    <input  class="form-control"type="text" placeholder="Home address" name="address" />
+                                    <br />
+                                </div>
             <div class="form-group">
-            <label>Your choice:</label>
+            <label>Fellowship Courses:</label>
             <select class="form-control"name="choice">
-                <option name="Ecommerce Marketing">Ecommerce Marketing</option>
-                <option name="Info Marketing">Info Marketing</option>
-                <option name="Digital Marketing">Digital Marketing</option>
-                <option name="Affiliate Marketing">Affiliate Marketing</option>
-                <option name="Product Creation and Launch">Product Creation and Launch</option>
+                 <option name="Netpreneur">Netpreneur</option>
                 <option name="Frontend Development">Frontend Development</option>
                 <option name="Backend Development">Backend Development</option>
                 <option name="Frontend Development">Frontend Development</option>
                 <option name="Mobile Development">Mobile Development</option>
                 <option name="Graphics Design">Graphics Design</option>
             </select>
+            </div>
+             <div class="form-group">
+                 
+                <label>upload profile image</label>
+                    <input type="file" name="pics" class="form-control">
+        
             </div>
             <input class="btn btn-secondary" style="background-color:black;" type="submit">
         </form>
