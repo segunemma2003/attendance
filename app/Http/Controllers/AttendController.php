@@ -69,8 +69,14 @@ class AttendController extends Controller
     }
     public function allfellows(){
         $attendance=Fellows::paginate(20);
-        $attendances=Fellows::all();
-        return view('allfellows',compact('attendance','attendances'));
+        $netpren=Fellows::WhereChoice('Netpreneur');
+        $graphics=Fellows::WhereChoice('Graphics Design');
+        $front=Fellows::WhereChoice('Frontend Development');
+        $back=Fellows::WhereChoice('Backend Development');
+        $mobile=Fellows::WhereChoice('Mobile Development');
+
+        return view('allfellows',compact('attendance','netpren',
+                        'graphics', 'front', 'back', 'mobile'));
     }
     public function signout($id)
     {

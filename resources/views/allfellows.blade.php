@@ -22,9 +22,10 @@
                     <th>Name</th>
                     <th>Email</th>
                     <th>gender</th>
-                    <th>Choice</th>
+                    <th>Age</th>
+                    <th>Fellowship Course</th>
                     <th>Id</th>
-                    <th>Time</th>
+                    
                 </tr>
                 @foreach($attendance as $attenda)
 
@@ -34,12 +35,14 @@
                     <td><a href="{{route('fellows.edit',$attenda->id)}}">{{$attenda->name}}</a></td>
                     <td>{{$attenda->email}}</td>
                     <td>{{$attenda->gender}}</td>
+                    <td>{{$attenda->age}}</td>
                     <td>{{$attenda->choice}}</td>
                     <td>{{$attenda->id}}</td>
-                    <td>{{$attenda->created_at}}</td>
+                    <!-- <td>{{$attenda->created_at}}</td> -->
                 </tr>
                 @endforeach
             </table>
+            
 <div style="margin:0 auto;">{{$attendance->links()}}</div>
             @endif
         </div>
