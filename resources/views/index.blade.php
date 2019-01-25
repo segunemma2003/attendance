@@ -24,7 +24,7 @@
         @endforeach
         @endif
     </center>
-        <form method="post" enctype="multipart/form-data”  >
+        <form method="post" enctype="multipart/form-data" >
             @csrf
                 <div class="form-group">
                     <label>Name:</label>
@@ -53,7 +53,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Date of Birth :</label>
-                                    <input  class="form-control"type="text" placeholder="Date of Birth" name="dob" />
+                                    <input  class="form-control"type="date" placeholder="Date of Birth" name="dob" />
                                     <br />
                                 </div>
                                  <div class="form-group">
@@ -72,7 +72,7 @@
                                     <br />
                                 </div>
             <div class="form-group">
-            <label>Fellowship Courses:</label>
+            <label>Fellowship Course:</label>
             <select class="form-control"name="choice">
                  <option name="Netpreneur">Netpreneur</option>
                 <option name="Frontend Development">Frontend Development</option>

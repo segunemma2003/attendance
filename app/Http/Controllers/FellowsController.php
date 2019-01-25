@@ -46,12 +46,12 @@ class FellowsController extends Controller
              "soo"=>"required",
              "lga"=>"required",
              "address"=>"required",
-             "pics"=>"required"
+             "pics"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:2048"
             
            
         ]);
         
-          $filename = $request->file('pics')->getClientOriginalName();
+        $filename = $request->file('pics')->getClientOriginalName();
 
         $file=pathinfo($filename,PATHINFO_FILENAME);
 
